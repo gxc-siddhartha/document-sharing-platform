@@ -3,11 +3,52 @@ import 'package:flutter/material.dart';
 
 class AppThemeStyle {
   static ThemeData lightTheme = ThemeData(
+    scaffoldBackgroundColor: Colors.white,
     fontFamily: "Inter",
     useMaterial3: false,
     brightness: Brightness.light,
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppThemeColors.themeColor,
+    ),
+    appBarTheme: AppBarTheme(
+      titleTextStyle: TextStyle(
+        fontSize: 18,
+        fontFamily: "Inter",
+        color: Colors.black,
+      ),
+      iconTheme: IconThemeData(
+        color: Colors.black.withOpacity(
+          0.6,
+        ),
+      ),
+      actionsIconTheme: IconThemeData(
+        color: Colors.black.withOpacity(
+          0.6,
+        ),
+      ),
+      toolbarHeight: 60,
+      backgroundColor: Colors.white,
+      elevation: 0.4,
+    ),
+    elevatedButtonTheme: const ElevatedButtonThemeData(
+      style: ButtonStyle(
+        elevation: MaterialStatePropertyAll(0),
+        minimumSize: MaterialStatePropertyAll(
+          Size(
+            double.infinity,
+            45,
+          ),
+        ),
+        shape: MaterialStatePropertyAll(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(
+                12,
+              ),
+            ),
+          ),
+        ),
+      ),
     ),
   );
 }
